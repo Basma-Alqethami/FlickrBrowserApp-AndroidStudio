@@ -1,4 +1,4 @@
-package com.example.flickrbrowserapp
+package com.example.flickrbrowser
 
 import java.io.Serializable
 

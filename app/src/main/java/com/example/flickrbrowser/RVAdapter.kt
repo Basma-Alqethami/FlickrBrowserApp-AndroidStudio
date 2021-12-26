@@ -1,6 +1,6 @@
-package com.example.flickrbrowserapp
+package com.example.flickrbrowser
 
-import android.content.Intent
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.row.view.*
 
-class RVAdapter (private var list: ArrayList<Data>): RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
+class RVAdapter (private val main: Activity, private var list: ArrayList<Data>): RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
     class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
 
@@ -30,12 +30,9 @@ class RVAdapter (private var list: ArrayList<Data>): RecyclerView.Adapter<RVAdap
 
             imageName.text = data.name
 
-//            holder.itemView.setOnClickListener{
-//                val data = Data(list[position].img, list[position].name)
-//                val intent = Intent(holder.itemView.context, DisplayData::class.java)
-//                intent.putExtra("displayData",data)
-//                holder.itemView.context.startActivity(intent)
-//            }
+            holder.itemView.setOnClickListener{
+                (main as MainActivity).DisplayImg(list[position].img, list[position].name)
+            }
         }
     }
 

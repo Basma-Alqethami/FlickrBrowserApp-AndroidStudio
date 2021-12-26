@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -33,7 +33,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:hint="Search"/>
+            android:hint="Search"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/btnSearch"
@@ -59,7 +60,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
             android:text="Images: " />
 
         <Button
@@ -85,33 +86,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginEnd="6dp"
             android:backgroundTint="#093C00"
             android:text="All" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <TextView
-            android:id="@+id/tvSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Search: " />
 
         <Button
             android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#093C00"
-            android:text="clear all" />
+            android:text="clear" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/displayImg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E8FAE6"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_margin="10dp"
+            android:background="#093C00"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/imgName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="name"
+            android:textAlignment="center"
+            android:textColor="#093C00"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="#093C00"
+            android:text="Back" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
